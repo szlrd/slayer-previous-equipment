@@ -172,9 +172,7 @@ public class SlayerPreviousPlugin extends Plugin {
         if (configuration == null || StringUtils.isBlank(configuration)) {
             return Collections.emptySet();
         }
-        return Arrays.stream(
-                        configManager.getConfiguration(CONFIG_GROUP, "NPC_" + slayerPluginService.getTask())
-                                .split(","))
+        return Arrays.stream(configuration.split(","))
                 .map((Integer::parseInt))
                 .collect(Collectors.toSet());
     }
